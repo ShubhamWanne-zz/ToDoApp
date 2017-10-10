@@ -19,22 +19,26 @@
                   <Font name="Noto Sans UI" size="16.0" />
                </font>
             </Label>
+            <Label fx:id="greeting" layoutX="446.0" layoutY="27.0" prefHeight="17.0" prefWidth="141.0" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <JFXTextField fx:id="event_text" focusColor="#009688" labelFloat="true" layoutX="115.0" layoutY="157.0" prefHeight="35.0" prefWidth="295.0" promptText="Add To Do" unFocusColor="#009688">
+      <JFXTextField fx:id="event_text" focusColor="#009688" labelFloat="true" layoutX="98.0" layoutY="168.0" prefHeight="35.0" prefWidth="334.0" promptText="Add To Do" unFocusColor="#009688">
          <font>
             <Font name="Noto Sans" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="add_button" ellipsisString="" layoutX="423.0" layoutY="141.0" prefHeight="54.0" prefWidth="91.0" ripplerFill="#009688" text=" ">
+      <JFXButton fx:id="add_button" ellipsisString="" layoutX="433.0" layoutY="149.0" prefHeight="54.0" prefWidth="91.0" ripplerFill="#009688" text=" ">
          <graphic>
             <ImageView fx:id="add_image" fitHeight="48.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
             <image>
             <Image url="/Add.png" />
           </image>
       </ImageView>
-         </graphic>
-      </JFXButton>
+         </graphic></JFXButton>
       <JFXButton fx:id="trash_button" layoutX="222.0" layoutY="523.0" prefHeight="63.0" prefWidth="161.0" ripplerFill="#009688" text="Trash Selected" textFill="#009688" wrapText="true">
          <font>
             <Font name="Roboto" size="13.0" />
@@ -47,7 +51,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXListView fx:id="task_space" layoutX="116.0" layoutY="221.0" prefHeight="302.0" prefWidth="373.0" />
+      <JFXListView fx:id="task_space" layoutX="83.0" layoutY="221.0" prefHeight="302.0" prefWidth="472.0" />
       <Label layoutX="240.0" layoutY="83.0" text="TODOs" textFill="#009688">
          <font>
             <Font name="Noto Sans UI" size="36.0" />

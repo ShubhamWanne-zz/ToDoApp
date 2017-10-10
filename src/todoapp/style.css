@@ -1,14 +1,15 @@
 .jfx-list-cell:selected{
-    -fx-background-color: #009688;
+    -fx-background-color: #B2DFDB;
+    -fx-stroke : #ffffff; 
 }
 .jfx-list-cell{
     -fx-background-insets : 0.0;
         -fx-cell-size: 58px;
 }
 
-.jfx-list-cell:hover{
+/*.jfx-list-cell:hover{
     -fx-background-color: #009688;
-}
+}*/
 .jfx-list-view{
     -fx-background-insets : 0;
     -fx-cell-vertical-margin : 10.0; 

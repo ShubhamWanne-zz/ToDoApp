@@ -9,16 +9,23 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.Iterator;
 import java.util.ResourceBundle;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javax.swing.event.HyperlinkEvent;
 
 /**
  *
@@ -55,10 +62,25 @@ public class MainController implements Initializable {
     private AnchorPane root;
 
     
+    @FXML
+    private Label greeting;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        root.addEventHandler(KeyEvent.KEY_PRESSED, e->{
+            if(e.getCode() == KeyCode.ENTER){
+                add_button.fire();
+                e.consume();
+            }
+        });
         
         header.setText("Hello, "+System.getProperty("user.name"));
+        
+                        Calendar cal = Calendar.getInstance();
+        
+        System.out.println(cal.get(cal.HOUR_OF_DAY)+" "+cal.AM_PM);
+
         
         task_space.setExpanded(true);
         task_space.depthProperty().set(1);
@@ -78,7 +100,12 @@ public class MainController implements Initializable {
             }
         });
         trash_button.setOnAction(e->{
-            task_space.getItems().removeAll(task_space.getSelectionModel().getSelectedItems());
+            System.out.println(task_space.getSelectionModel().getSelectedItems());
+            for(Node d : task_space.getSelectionModel().getSelectedItems()){
+                System.out.println(d);
+                task_space.getItems().remove(d);
+            }
+//            task_space.getItems().removeAll(task_space.getSelectionModel().getSelectedItems());
         });
     }    
 }
